@@ -1,13 +1,227 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  background-color: #8d8d8d;
+  height: 100vh;
+  font-family: 'Russo One', sans-serif;
+}
+
+.app {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper {
+  border: 5px solid orange;
+  background-color: #b3b3b3;
+  min-width: 660px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-container em,
+.logo-container i {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.logo-container {
+  margin-left: auto;
+}
+
+.logo-container i {
+  margin-left: .5rem;
+}
+
+.drum-buttons {
+  display: flex;
+  max-width: 332px;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.drum-pad {
+  height: 80px;
+  width: 100px;
+  flex: 1 0 30%;
+  background-color: grey;
+  box-shadow: #000 3px 3px 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+
+.drum-controls {
+  display: flex;
+  flex-direction: column;
+  width: 240px;
+  align-items: center;
+  gap: 1rem;
+  margin-block:4rem;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 19px;
+  left: 2px;
+  bottom: 2px;
+  background-color: blue;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.power,
+.display,
+.bank {
+  text-align: center;
+}
+
+.display {
+  width: 200px;
+  background-color: gray;
+  height: 50px;
+}
+
+.controls-slider {
+  text-align: center;
+
+}
+
+[type='range'] {
+  -webkit-appearance: none;
+  margin: 12.5px 0;
+  width: 100%;
+}
+[type='range']:focus {
+  outline: none;
+}
+[type='range']::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 2px 2px 2px #222, 0 0 2px #2f2f2f;
+  background: #424242;
+  border: 1px solid #000;
+  border-radius: 0;
+}
+
+[type='range']::-webkit-slider-thumb {
+  box-shadow: 1px 1px 1px #111, 0 0 1px #1e1e1e;
+  border: 0 solid #fff;
+  height: 25px;
+  width: 8px;
+  border-radius: 0;
+  background: blue;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -11px;
+}
+
+[type='range']:focus::-webkit-slider-runnable-track {
+  background: #4f4f4f;
+}
+[type='range']::-moz-range-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 2px 2px 2px #222, 0 0 2px #2f2f2f;
+  background: #424242;
+  border: 1px solid #000;
+  border-radius: 0;
+}
+[type='range']::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #111, 0 0 1px #1e1e1e;
+  border: 0 solid #fff;
+  height: 25px;
+  width: 8px;
+  border-radius: 0;
+  background: blue;
+  cursor: pointer;
+}
+[type='range']::-ms-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: transparent;
+  border-color: transparent;
+  border-width: 8px 0;
+  color: transparent;
+}
+[type='range']::-ms-fill-lower {
+  box-shadow: 2px 2px 2px #222, 0 0 2px #2f2f2f;
+  background: #353535;
+  border: 1px solid #000;
+  border-radius: 0;
+}
+[type='range']::-ms-fill-upper {
+  box-shadow: 2px 2px 2px #222, 0 0 2px #2f2f2f;
+  background: #424242;
+  border: 1px solid #000;
+  border-radius: 0;
+}
+[type='range']::-ms-thumb {
+  box-shadow: 1px 1px 1px #111, 0 0 1px #1e1e1e;
+  border: 0 solid #fff;
+  height: 25px;
+  width: 8px;
+  border-radius: 0;
+  background: blue;
+  cursor: pointer;
+}
+[type='range']:focus::-ms-fill-lower {
+  background: #424242;
+}
+[type='range']:focus::-ms-fill-upper {
+  background: #4f4f4f;
 }
