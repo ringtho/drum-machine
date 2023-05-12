@@ -9,7 +9,6 @@
       name="description"
       content="Drum Machine"
     />
-    <script src="../src/main.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
     integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
@@ -20,6 +19,87 @@
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
-    
+    <script>
+      $(document).ready(function () {
+        $(document).keypress(function (event) {
+        const keycode = (event.keyCode ? event.keyCode : event.which)
+        if (keycode === 113 || keycode === 81) {
+          $('#Q')[0].play()
+          $('#display').text("Heater 1")
+        } else if (keycode === 119 || keycode === 87) {
+          $('#W')[0].play()
+          $('#display').text("Heater 2")
+        } else if (keycode === 101 || keycode === 69) {
+          $('#E')[0].play()
+          $('#display').text("Heater 3")
+        } else if (keycode === 97 || keycode === 65) {
+          $('#A')[0].play()
+          $('#display').text("Heater 4")
+        } else if (keycode === 115 || keycode === 83) {
+          $('#S')[0].play()
+          $('#display').text("Clap")
+        } else if (keycode === 100 || keycode === 68) {
+          $('#D')[0].play()
+          $('#display').text("Open-HH")
+        } else if (keycode === 122 || keycode === 90) {
+          $('#Z')[0].play()
+          $('#display').text("Kick-n'-Hat")
+          
+        } else if (keycode === 120 || keycode === 88) {
+          $('#X')[0].play()
+          $('#display').text("Kick")
+        } else if (keycode === 99 || keycode === 67) {
+          $('#C')[0].play()
+          $('#display').text("Closed-HH")
+        }
+        event.stopPropagation()
+      })
+
+      $('#heater-1').click(function () {
+        $('#Q')[0].play()
+        $('#display').text("Heater 1")
+      })
+
+      $('#heater-2').click(function () {
+        $('#W')[0].play()
+        $('#display').text("Heater 2")
+      })
+
+      $('#heater-3').click(function () {
+        $('#E')[0].play()
+        $('#display').text("Heater 3")
+      })
+
+      $('#heater-4').click(function () {
+        $('#A')[0].play()
+        $('#display').text("Heater 4")
+      })
+
+      $('#heater-5').click(function () {
+        $('#S')[0].play()
+        $('#display').text("Clap")
+      })
+
+      $('#heater-6').click(function () {
+        $('#D')[0].play()
+        $('#display').text("Open-HH")
+      })
+
+      $('#heater-7').click(function () {
+        $('#Z')[0].play()
+        $('#display').text("Kick-n'-Hat")
+      })
+
+      $('#heater-8').click(function () {
+        $('#X')[0].play()
+        $('#display').text("Kick")
+      })
+
+      $('#heater-9').click(function () {
+        $('#C')[0].play()
+        $('#display').text("Closed-HH")
+      })
+    })
+    </script>
   </body>
 </html>
